@@ -2625,11 +2625,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Liam's PC\\LifeManagerBackend\\LifeManagerBackend.csproj",
+      "projectUniqueName": "C:\\Users\\Liam's PC\\Desktop\\Coding_Workspace\\LifeManagerBackend\\LifeManagerBackend.csproj",
       "projectName": "LifeManagerBackend",
-      "projectPath": "C:\\Users\\Liam's PC\\LifeManagerBackend\\LifeManagerBackend.csproj",
+      "projectPath": "C:\\Users\\Liam's PC\\Desktop\\Coding_Workspace\\LifeManagerBackend\\LifeManagerBackend.csproj",
       "packagesPath": "C:\\Users\\Liam's PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Liam's PC\\LifeManagerBackend\\obj\\",
+      "outputPath": "C:\\Users\\Liam's PC\\Desktop\\Coding_Workspace\\LifeManagerBackend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Liam's PC\\AppData\\Roaming\\NuGet\\NuGet.Config"

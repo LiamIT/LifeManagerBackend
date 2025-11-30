@@ -1,5 +1,6 @@
 ﻿// Program.cs
 using LifeManagerBackend.Data;
+using LifeManagerBackend.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -35,9 +36,11 @@ static async Task DemoSomeLogic(AppDbContext db)
     // This is where you write and test all your backend logic
     Console.WriteLine("Running demo logic...");
 
-    // Example: create a test user
-    // var user = new User { Username = "test", Email = "test@example.com" };
-    // db.Users.Add(user);
-    // await db.SaveChangesAsync();
-    // Console.WriteLine($"Created user with Id {user.Id}");
+
+    //create a test user
+    var UserID = createNewUser();
+    var user = new User { Username = "test", Email = "test@example.com" };
+    db.Users.Add(user);
+    await db.SaveChangesAsync();
+    Console.WriteLine($"Created user with Id {user.Id}");
 }
