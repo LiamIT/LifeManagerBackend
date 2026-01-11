@@ -1,9 +1,10 @@
 ﻿// Program.cs
+using LifeManagerBackend;
 using LifeManagerBackend.Data;
 using LifeManagerBackend.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Configuration;
-
 
 var config = new ConfigurationBuilder()
     .AddUserSecrets<Program>()
@@ -11,6 +12,8 @@ var config = new ConfigurationBuilder()
 
 var connectionString = config.GetConnectionString("DefaultConnection")
                        ?? throw new InvalidOperationException("Connection string not found.");
+
+// (debug logging removed)
 
 var options = new DbContextOptionsBuilder<AppDbContext>()
     .UseNpgsql(connectionString)
@@ -35,12 +38,23 @@ static async Task DemoSomeLogic(AppDbContext db)
 {
     // This is where you write and test all your backend logic
     Console.WriteLine("Running demo logic...");
+    BaseClass mb = new();
 
+    Console.WriteLine("Please Enter Your desired Username");
+    var strUsername = Console.ReadLine();
+
+    Console.WriteLine("Please Enter your Email");
+    var strEmail = Console.ReadLine();
+
+    if(strUsername.Length < 7)
+        throw new Exception("Username is too short");
+    if(!strEmail.Contains('@'))
+        throw new Exception("Not a valid email");
 
     //create a test user
-    var UserID = createNewUser();
-    var user = new User { Username = "test", Email = "test@example.com" };
-    db.Users.Add(user);
-    await db.SaveChangesAsync();
-    Console.WriteLine($"Created user with Id {user.Id}");
+    var User = mb.CreateNewUser(pstrUsername: strUsername, 
+                                pstrEmail: strEmail,
+                                db: db);
+
+
 }

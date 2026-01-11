@@ -2,16 +2,16 @@ using System.ComponentModel.DataAnnotations;
 namespace LifeManagerBackend.Models;
 public class User
 {
-    public int Id { get; set; }
+    public int fintid { get; set; }
     
     [Required]
-    public string Username { get; set; } = string.Empty;
+    public string fstrusername { get; set; } = string.Empty;
     
     [Required]
-    public string Email { get; set; } = string.Empty;
+    public string fstremail { get; set; } = string.Empty;
 
     // Hashed password (never store plain text!)
-    public string PasswordHash { get; set; } = string.Empty;
+    //public string PasswordHash { get; set; } = string.Empty;
 
-    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    public DateTime fdtmcreated { get; set; } = DateTime.UtcNow;
 }

@@ -7,8 +7,8 @@ public class AppDbContext : DbContext
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-    public DbSet<TaskItem> Tasks => Set<TaskItem>();
-
+    public DbSet<TaskItem> tbltasks => Set<TaskItem>();
+    public DbSet<User> tblusers => Set<User>();
     // Add your tables here as you create them
     // public DbSet<Task> Tasks => Set<Task>();
     // public DbSet<Goal> Goals => Set<Goal>();
